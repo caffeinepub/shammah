@@ -1,0 +1,127 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 3,
+  "summary": "Wellness app (SHAMMAH) enhancements requested across physical health tracking, personalized dashboard, finance, social/personal growth tools, and branding update to replace the SHAMMAH header with the Butterfly Wellness logo.",
+  "architectural_notes": [
+    "External self-awareness tools should open via external links but provide an easy way for the user to return back to the app.",
+    "Header logo/text located in frontend/src/pages/LandingPage.tsx and should be replaced with Butterfly Wellness wordmark image only (remove SHAMMAH text)."
+  ],
+  "known_issues": [
+    "Build system sometimes fails with 'AI couldn't implement that request' and may require breaking changes into smaller chunks."
+  ],
+  "isFixRequest": false,
+  "existing_features": [
+    {
+      "id": "feature-update-the-landing-page-header-to-fully-replace-the-shammah-branding-with-the-butterfly-wellness-main-wordmark-image-only-1-replace-the-existing-header-img-xpath-html-1-body-1-div-1-div-1-header-1-div-1-div-1-img-1-to-use-the-uploaded-butterfly-wellness-wordmark-image-and-2-remove-the-shammah-h1-element-entirely-xpath-html-1-body-1-div-1-div-1-header-1-div-1-div-1-h1-1",
+      "title": "Update the Landing page header to fully replace the SHAMMAH branding with the Butterfly Wellness main wordmark image only: (1) replace the existing header <img> (XPath /html[1]/body[1]/div[1]/div[1]/header[1]/div[1]/div[1]/img[1]) to use the uploaded Butterfly Wellness wordmark image, and (2) remove the SHAMMAH <h1> element entirely (XPath /html[1]/body[1]/div[1]/div[1]/header[1]/div[1]/div[1]/h1[1]).",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-the-uploaded-butterfly-wellness-wordmark-image-to-the-frontend-as-a-static-public-asset-and-reference-it-from-the-landing-page-header-img-src-use-a-filename-and-path-that-avoids-spaces-special-characters",
+      "title": "Add the uploaded Butterfly Wellness wordmark image to the frontend as a static public asset and reference it from the Landing page header <img> src. Use a filename and path that avoids spaces/special characters.",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Baseline symptom entry via body map, with ability to upload photos from gallery afterward",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-2",
+      "summary": "Personalize dashboard based on quiz outcome acknowledgement",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-3",
+      "summary": "Daily trackers should log adherence for meals (breakfast/lunch/dinner), exercise, sleep, and skincare routine",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-4",
+      "summary": "Make +Add Goal interactive to allow goal entry",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-5",
+      "summary": "Health monitoring view should use Monday–Sunday week format",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-6",
+      "summary": "Spiritual exercise button should open links when clicked",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-7",
+      "summary": "Attach copyright-free guided meditation content",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-8",
+      "summary": "Mood journal entries should award 1 point when selected/confirmed",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-9",
+      "summary": "Allow users to add personal social media profiles/links in Social Connection pillars including WhatsApp",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-10",
+      "summary": "Financial health: change currency to £ and make Budget Tracker +Add Expense interactive like +Add Debt",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-11",
+      "summary": "Finance dashboard: selectable list of UK banks (include digital banks Monzo, Revolut, Starling) and/or Open Banking API sync option",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-12",
+      "summary": "Add period tracker (Flo-like) in Physical Health with symptom logging (cramps, mood, flow, etc.)",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-13",
+      "summary": "Social Connection: add entry button for special dates (birthdays, anniversaries, weddings, parties, holidays, etc.)",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-14",
+      "summary": "Personal Growth: add self-awareness tools section with explanations + external links (MBTI, Enneagram, Big Five, StrengthsFinder, Wheel of Life, Horoscope, Numerology) and easy return back to app",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-15",
+      "summary": "Branding: replace SHAMMAH header text/logo with Butterfly Wellness main wordmark logo only (remove SHAMMAH text entirely)",
+      "reqIds": [],
+      "status": "pending"
+    }
+  ],
+  "gameProjectType": "none",
+  "projectName": "Replace landing page header branding with Butterfly Wellness wordmark",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}

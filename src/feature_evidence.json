@@ -1,0 +1,45 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-update-the-landing-page-header-to-fully-replace-the-shammah-branding-with-the-butterfly-wellness-main-wordmark-image-only-1-replace-the-existing-header-img-xpath-html-1-body-1-div-1-div-1-header-1-div-1-div-1-img-1-to-use-the-uploaded-butterfly-wellness-wordmark-image-and-2-remove-the-shammah-h1-element-entirely-xpath-html-1-body-1-div-1-div-1-header-1-div-1-div-1-h1-1",
+      "featureTitle": "Update the Landing page header to fully replace the SHAMMAH branding with the Butterfly Wellness main wordmark image only: (1) replace the existing header <img> (XPath /html[1]/body[1]/div[1]/div[1]/header[1]/div[1]/div[1]/img[1]) to use the uploaded Butterfly Wellness wordmark image, and (2) remove the SHAMMAH <h1> element entirely (XPath /html[1]/body[1]/div[1]/div[1]/header[1]/div[1]/div[1]/h1[1]).",
+      "files": [
+        "frontend/src/pages/LandingPage.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "blob-storage@4.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-1"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-add-the-uploaded-butterfly-wellness-wordmark-image-to-the-frontend-as-a-static-public-asset-and-reference-it-from-the-landing-page-header-img-src-use-a-filename-and-path-that-avoids-spaces-special-characters",
+      "featureTitle": "Add the uploaded Butterfly Wellness wordmark image to the frontend as a static public asset and reference it from the Landing page header <img> src. Use a filename and path that avoids spaces/special characters.",
+      "files": [
+        "frontend/src/pages/LandingPage.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "blob-storage@4.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-2"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

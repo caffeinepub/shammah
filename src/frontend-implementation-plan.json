@@ -1,0 +1,43 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Replace landing header branding with Butterfly Wellness wordmark",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "summary": "Replace the landing page header branding by removing the SHAMMAH text heading and leaving only a single Butterfly Wellness wordmark image in the header.",
+      "acceptanceCriteria": [
+        "In frontend/src/pages/LandingPage.tsx, the header no longer renders the text \"SHAMMAH\" (the <h1> element is removed).",
+        "The header shows only the Butterfly Wellness main wordmark logo image (use the uploaded wordmark image, not the BW icon).",
+        "The header logo has an appropriate alt text (e.g., \"Butterfly Wellness\") and the logo sizing preserves a clean header layout (no overflow or distortion)."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/LandingPage.tsx",
+          "operation": "modify",
+          "description": "Update only the landing page header branding area: remove the SHAMMAH <h1> element entirely and ensure the header renders only a single logo <img> with appropriate alt text (e.g., \"Butterfly Wellness\") and non-distorting sizing (e.g., constrain by height with auto width)."
+        }
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "summary": "Add the uploaded Butterfly Wellness wordmark as a static public asset and point the landing page header logo <img> src to that asset using a sanitized filename/path.",
+      "acceptanceCriteria": [
+        "A copy of the uploaded wordmark image (green bw logo.png) exists under frontend/public (recommended under frontend/public/assets/...).",
+        "The Landing page header <img> src points to the new public asset path and loads correctly in the browser build without broken links."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/public/assets/branding/butterfly-wellness-wordmark.png",
+          "operation": "create",
+          "description": "Add a sanitized, space-free copy of the uploaded Butterfly Wellness wordmark image (source: \"green bw logo.png\") as a static public asset at this path so it can be referenced directly by the landing header <img>."
+        },
+        {
+          "path": "frontend/src/pages/LandingPage.tsx",
+          "operation": "modify",
+          "description": "Change only the header logo <img> src to reference the new public asset path (frontend/public/assets/branding/butterfly-wellness-wordmark.png) and ensure it loads correctly in the built app (no broken link)."
+        }
+      ]
+    }
+  ]
+}

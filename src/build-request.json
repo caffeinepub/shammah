@@ -1,0 +1,65 @@
+{
+  "kind": "build_request",
+  "title": "Replace landing page header branding with Butterfly Wellness wordmark",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "text": "Update the Landing page header to fully replace the SHAMMAH branding with the Butterfly Wellness main wordmark image only: (1) replace the existing header <img> (XPath /html[1]/body[1]/div[1]/div[1]/header[1]/div[1]/div[1]/img[1]) to use the uploaded Butterfly Wellness wordmark image, and (2) remove the SHAMMAH <h1> element entirely (XPath /html[1]/body[1]/div[1]/div[1]/header[1]/div[1]/div[1]/h1[1]).",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "yes, replace it fully"
+        ]
+      },
+      "acceptanceCriteria": [
+        "In frontend/src/pages/LandingPage.tsx, the header no longer renders the text \"SHAMMAH\" (the <h1> element is removed).",
+        "The header shows only the Butterfly Wellness main wordmark logo image (use the uploaded wordmark image, not the BW icon).",
+        "The header logo has an appropriate alt text (e.g., \"Butterfly Wellness\") and the logo sizing preserves a clean header layout (no overflow or distortion)."
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "text": "Add the uploaded Butterfly Wellness wordmark image to the frontend as a static public asset and reference it from the Landing page header <img> src. Use a filename and path that avoids spaces/special characters.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "find the header file and please replace it with this image",
+          "yes, replace it fully"
+        ]
+      },
+      "acceptanceCriteria": [
+        "A copy of the uploaded wordmark image (green bw logo.png) exists under frontend/public (recommended under frontend/public/assets/...).",
+        "The Landing page header <img> src points to the new public asset path and loads correctly in the browser build without broken links."
+      ]
+    }
+  ],
+  "constraints": [
+    "Apply changes ONLY to the selected header elements (the header logo <img> and header <h1>) on the landing page; do not make unrelated content changes.",
+    "Do not edit any files under frontend/src/components/ui or other paths listed as immutable in SYSTEM_CONTEXT."
+  ],
+  "nonGoals": [
+    "Do not redesign the rest of the landing page, hero copy, footer, or dashboard screens.",
+    "Do not change backend logic, data models, or authentication behavior."
+  ],
+  "imageRequirements": {
+    "required": [],
+    "edits": []
+  },
+  "userProfileUpdate": {
+    "goalsToAdd": [],
+    "goalsToRemove": [],
+    "preferencesToAdd": [],
+    "preferencesToRemove": [],
+    "miscToAdd": [],
+    "miscToRemove": [],
+    "fieldsToSet": {},
+    "fieldsToDelete": []
+  }
+}

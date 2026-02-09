@@ -1,0 +1,20 @@
+{
+  "frontend/src/App.tsx": "Main application component that handles authentication flow, profile setup, onboarding flow with photo upload and quiz, and dashboard routing with loading states and welcome tutorial.",
+  "frontend/src/hooks/useQueries.ts": "React Query hooks for all backend operations including profile management, quiz responses, journal entries, mindfulness activities, wellness pillar updates, reward system management, medication management (CRUD and adherence logging), and debt management (CRUD and payment tracking).",
+  "frontend/src/pages/LandingPage.tsx": "Landing page with Internet Identity login, hero section showcasing wellness features, now displaying Butterfly Wellness wordmark logo in the header instead of SHAMMAH branding.",
+  "frontend/src/pages/ProfileSetup.tsx": "Simplified profile setup component that collects email and username without the 4-digit duration code step.",
+  "frontend/src/pages/Dashboard.tsx": "Main dashboard with persistent sidebar navigation including new Resources page under Tools menu, along with overview, rewards, 7 wellness pillars, journal, mindfulness, and logout functionality.",
+  "frontend/src/pages/dashboard/OverviewPage.tsx": "Dashboard overview displaying overall progress, wellness pillars progress, recent journal entries, mindfulness activities, and subscription info (removed skin health score, total points, and badges earned).",
+  "frontend/src/pages/dashboard/QuizPage.tsx": "Interactive health quiz with 5 questions about user's condition, goals, and support needs with progress tracking.",
+  "frontend/src/pages/dashboard/JournalPage.tsx": "Journal interface for creating and viewing reflection entries with timestamps and full content display.",
+  "frontend/src/pages/dashboard/MindfulnessPage.tsx": "Mindfulness tracking page for logging meditation and wellness activities with duration, statistics, and activity history.",
+  "frontend/src/pages/dashboard/PillarPage.tsx": "Individual wellness pillar pages with activity logging for earning points, pillar-specific features including medication management in Physical Care pillar and debt management in Financial Health pillar, and simulated AI-generated content.",
+  "frontend/src/components/WelcomeTutorial.tsx": "Welcome dialog explaining SHAMMAH's purpose as an agentic AI assistant for SCINS users with feature highlights and getting started guide.",
+  "frontend/src/index.css": "Global styles with OKLCH color system using soft green and white theme for calming wellness experience in both light and dark modes.",
+  "frontend/src/pages/dashboard/RewardsPage.tsx": "Comprehensive rewards page displaying total points, earned badges with progress tracking, recent rewards history, and unlockable premium wellness tips based on point accumulation.",
+  "frontend/src/pages/OnboardingFlow.tsx": "New onboarding flow component that guides users through baseline photo upload and health quiz completion before accessing the dashboard, with proper Input component import.",
+  "frontend/src/pages/dashboard/ResourcesPage.tsx": "New resources page displaying self-help materials organized in tabs for videos, ebooks, and guides with mock content and calming emerald-themed design.",
+  "frontend/src/components/MedicationManagement.tsx": "Medication management component with add/edit/delete functionality, adherence logging with notes, daily reminders, and visual display of medication schedules and history.",
+  "frontend/src/components/DebtManagement.tsx": "Debt management component with add/delete functionality, payment tracking, progress visualization with charts, debt reduction trends, and financial wellness integration.",
+  "frontend/public/assets/branding/butterfly-wellness-wordmark.png": "Butterfly Wellness wordmark logo image asset used in the landing page header."
+}
