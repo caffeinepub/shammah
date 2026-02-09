@@ -14,11 +14,10 @@ export default function LandingPage() {
       <header className="border-b border-emerald-100 bg-white/80 backdrop-blur-sm">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
           <div className="flex items-center">
-            <img 
-              src="/assets/branding/butterfly-wellness-wordmark.png" 
-              alt="Butterfly Wellness" 
-              className="h-10 w-auto"
-            />
+            <div className="flex flex-col">
+              <h1 className="text-2xl font-bold text-emerald-800 tracking-tight">SHAMMAH</h1>
+              <p className="text-xs text-emerald-600">Your Wellness Companion</p>
+            </div>
           </div>
           <Button 
             onClick={login}

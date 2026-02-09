@@ -1,11 +1,10 @@
 # Specification
 
 ## Summary
-**Goal:** Replace the landing page header branding so it shows only the Butterfly Wellness wordmark (no SHAMMAH text).
+**Goal:** Restore the Landing page header branding to the previous SHAMMAH text-based version by removing the broken Butterfly Wellness wordmark image.
 
 **Planned changes:**
-- In `frontend/src/pages/LandingPage.tsx`, update the header logo `<img>` to use the uploaded Butterfly Wellness wordmark image as its `src`.
-- Remove the SHAMMAH header `<h1>` element so no "SHAMMAH" text renders in the landing page header.
-- Add the uploaded wordmark image to `frontend/public` (e.g., under `frontend/public/assets/`) using a filename without spaces/special characters, and set appropriate `alt` text and sizing to avoid overflow/distortion.
+- Update `frontend/src/pages/LandingPage.tsx` to remove the header `<img>` that references `/assets/branding/butterfly-wellness-wordmark.png`.
+- Restore the previous SHAMMAH header branding as text-based content while preserving the existing header layout (left branding, right Sign In button).
 
-**User-visible outcome:** The landing page header displays only the Butterfly Wellness wordmark logo with clean sizing and no SHAMMAH text.
+**User-visible outcome:** The Landing page header no longer shows a broken image; SHAMMAH branding displays reliably as text, and the Sign In button remains visible and works as before.

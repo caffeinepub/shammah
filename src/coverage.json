@@ -1,36 +1,23 @@
 {
   "kind": "coverage_report",
   "version": "1.0",
-  "generatedAt": "2026-02-09T22:15:19.896Z",
+  "generatedAt": "2026-02-09T22:31:33.203Z",
   "sources": {
     "buildRequest": true,
     "implementationPlan": true
   },
   "requirements": {
-    "total": 2,
-    "implemented": 2,
+    "total": 1,
+    "implemented": 1,
     "items": [
       {
-        "id": "REQ-1",
-        "summary": "Update the Landing page header to fully replace the SHAMMAH branding with the Butterfly Wellness main wordmark image only: (1) replace the existing header <img> (XPath /html[1]/body[1]/div[1]/div[1]/header[1]/div[1]/div[1]/img[1]) to use the uploaded Butterfly Wellness wordmark image, and (2) remove the SHAMMAH <h1> element entirely (XPath /html[1]/body[1]/div[1]/div[1]/header[1]/div[1]/div[1]/h1[1]).",
+        "id": "REQ-3",
+        "summary": "Revert the landing page header branding in `frontend/src/pages/LandingPage.tsx` to what it was before the Butterfly Wellness wordmark change, since the header image is not displaying. Specifically, remove the header `<img>` that references `/assets/branding/butterfly-wellness-wordmark.png` and restore the previous SHAMMAH header branding (text-based, not dependent on the missing image), while keeping the existing header layout (left branding, right Sign In button).",
         "status": "implemented",
         "plannedFiles": [
           "frontend/src/pages/LandingPage.tsx"
         ],
         "matchedFiles": [
-          "frontend/src/pages/LandingPage.tsx"
-        ]
-      },
-      {
-        "id": "REQ-2",
-        "summary": "Add the uploaded Butterfly Wellness wordmark image to the frontend as a static public asset and reference it from the Landing page header <img> src. Use a filename and path that avoids spaces/special characters.",
-        "status": "implemented",
-        "plannedFiles": [
-          "frontend/public/assets/branding/butterfly-wellness-wordmark.png",
-          "frontend/src/pages/LandingPage.tsx"
-        ],
-        "matchedFiles": [
-          "frontend/public/assets/branding/butterfly-wellness-wordmark.png",
           "frontend/src/pages/LandingPage.tsx"
         ]
       }
@@ -38,20 +25,9 @@
   },
   "changedFiles": [
     "build-request.json",
-    "build-template/Dockerfile",
-    "build-template/LICENSE",
-    "build-template/README.md",
-    "build-template/deploy.sh",
-    "build-template/icp.yaml",
-    "build-template/src/backend/canister.yaml",
-    "build-template/src/frontend/canister.yaml",
-    "caffeine.lock.json",
     "feature_evidence.json",
     "frontend-file-summaries.txt",
     "frontend-implementation-plan.json",
-    "frontend/public/assets/branding/butterfly-wellness-wordmark.png",
-    "frontend/src/config.ts",
-    "frontend/src/hooks/useInternetIdentity.ts",
     "frontend/src/pages/LandingPage.tsx",
     "project_state.json",
     "scratch/component-selection.json",

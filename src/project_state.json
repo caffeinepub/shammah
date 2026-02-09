@@ -1,15 +1,16 @@
 {
   "schemaVersion": "1.0.0",
-  "projectStateVersion": 3,
-  "summary": "Wellness app (SHAMMAH) enhancements requested across physical health tracking, personalized dashboard, finance, social/personal growth tools, and branding update to replace the SHAMMAH header with the Butterfly Wellness logo.",
+  "projectStateVersion": 5,
+  "summary": "Wellness app (SHAMMAH) enhancements across health tracking, dashboard, finance, social/personal growth tools; landing page header branding change to Butterfly Wellness wordmark is being reverted because the new image is not displaying.",
   "architectural_notes": [
     "External self-awareness tools should open via external links but provide an easy way for the user to return back to the app.",
     "Header logo/text located in frontend/src/pages/LandingPage.tsx and should be replaced with Butterfly Wellness wordmark image only (remove SHAMMAH text)."
   ],
   "known_issues": [
-    "Build system sometimes fails with 'AI couldn't implement that request' and may require breaking changes into smaller chunks."
+    "Build system sometimes fails with 'AI couldn't implement that request' and may require breaking changes into smaller chunks.",
+    "Butterfly Wellness wordmark header image is not displaying after deployment; user requested reverting to previous header image."
   ],
-  "isFixRequest": false,
+  "isFixRequest": true,
   "existing_features": [
     {
       "id": "feature-update-the-landing-page-header-to-fully-replace-the-shammah-branding-with-the-butterfly-wellness-main-wordmark-image-only-1-replace-the-existing-header-img-xpath-html-1-body-1-div-1-div-1-header-1-div-1-div-1-img-1-to-use-the-uploaded-butterfly-wellness-wordmark-image-and-2-remove-the-shammah-h1-element-entirely-xpath-html-1-body-1-div-1-div-1-header-1-div-1-div-1-h1-1",
@@ -24,6 +25,14 @@
       "title": "Add the uploaded Butterfly Wellness wordmark image to the frontend as a static public asset and reference it from the Landing page header <img> src. Use a filename and path that avoids spaces/special characters.",
       "reqIds": [
         "REQ-2"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-revert-the-landing-page-header-branding-in-frontend-src-pages-landingpage-tsx-to-what-it-was-before-the-butterfly-wellness-wordmark-change-since-the-header-image-is-not-displaying-specifically-remove-the-header-img-that-references-assets-branding-butterfly-wellness-wordmark-png-and-restore-the-previous-shammah-header-branding-text-based-not-dependent-on-the-missing-image-while-keeping-the-existing-header-layout-left-branding-right-sign-in-button",
+      "title": "Revert the landing page header branding in `frontend/src/pages/LandingPage.tsx` to what it was before the Butterfly Wellness wordmark change, since the header image is not displaying. Specifically, remove the header `<img>` that references `/assets/branding/butterfly-wellness-wordmark.png` and restore the previous SHAMMAH header branding (text-based, not dependent on the missing image), while keeping the existing header layout (left branding, right Sign In button).",
+      "reqIds": [
+        "REQ-3"
       ],
       "version": 1
     }
@@ -110,12 +119,6 @@
     {
       "id": "AR-14",
       "summary": "Personal Growth: add self-awareness tools section with explanations + external links (MBTI, Enneagram, Big Five, StrengthsFinder, Wheel of Life, Horoscope, Numerology) and easy return back to app",
-      "reqIds": [],
-      "status": "pending"
-    },
-    {
-      "id": "AR-15",
-      "summary": "Branding: replace SHAMMAH header text/logo with Butterfly Wellness main wordmark logo only (remove SHAMMAH text entirely)",
       "reqIds": [],
       "status": "pending"
     }

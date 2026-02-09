@@ -1,7 +1,7 @@
 {
   "frontend/src/App.tsx": "Main application component that handles authentication flow, profile setup, onboarding flow with photo upload and quiz, and dashboard routing with loading states and welcome tutorial.",
   "frontend/src/hooks/useQueries.ts": "React Query hooks for all backend operations including profile management, quiz responses, journal entries, mindfulness activities, wellness pillar updates, reward system management, medication management (CRUD and adherence logging), and debt management (CRUD and payment tracking).",
-  "frontend/src/pages/LandingPage.tsx": "Landing page with Internet Identity login, hero section showcasing wellness features, now displaying Butterfly Wellness wordmark logo in the header instead of SHAMMAH branding.",
+  "frontend/src/pages/LandingPage.tsx": "Landing page with Internet Identity login, hero section showcasing wellness features, now displaying text-based SHAMMAH branding in the header with tagline instead of image logo.",
   "frontend/src/pages/ProfileSetup.tsx": "Simplified profile setup component that collects email and username without the 4-digit duration code step.",
   "frontend/src/pages/Dashboard.tsx": "Main dashboard with persistent sidebar navigation including new Resources page under Tools menu, along with overview, rewards, 7 wellness pillars, journal, mindfulness, and logout functionality.",
   "frontend/src/pages/dashboard/OverviewPage.tsx": "Dashboard overview displaying overall progress, wellness pillars progress, recent journal entries, mindfulness activities, and subscription info (removed skin health score, total points, and badges earned).",
