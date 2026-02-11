@@ -1,21 +1,57 @@
 {
   "kind": "implementation_plan",
   "version": "1.0",
-  "title": "Revert Landing header to text-based SHAMMAH branding",
+  "title": "Surface deployed frontend version with build marker and cache-busting on Landing page",
   "requirements": [
     {
-      "id": "REQ-3",
-      "summary": "Remove broken Butterfly Wellness header image and restore reliable text-based SHAMMAH branding while preserving the header layout with right-aligned Sign In button.",
+      "id": "REQ-1",
+      "summary": "Ensure Landing header uses SHAMMAH text branding only and remove any Butterfly Wellness wordmark header references.",
       "acceptanceCriteria": [
-        "On the Landing page, the header no longer attempts to load `/assets/branding/butterfly-wellness-wordmark.png`.",
-        "The header branding renders reliably (no broken image icon) and matches the previous SHAMMAH branding style (text-based).",
-        "The Sign In button remains visible and functional, with no layout regression in the header."
+        "`frontend/src/pages/LandingPage.tsx` header renders SHAMMAH text branding (e.g., heading + tagline) and does not render a header logo `<img>` for Butterfly Wellness.",
+        "A repo-wide search shows no usage of `/assets/branding/butterfly-wellness-wordmark.png` in the header branding code path.",
+        "After deployment, the production Landing page visibly shows the SHAMMAH text header branding."
       ],
       "file_operations": [
         {
           "path": "frontend/src/pages/LandingPage.tsx",
           "operation": "modify",
-          "description": "Update the landing page header branding: remove the <img> that references `/assets/branding/butterfly-wellness-wordmark.png` and replace it with the prior SHAMMAH text-based branding (e.g., prominent SHAMMAH wordmark as text, optional small tagline), keeping the existing header structure (left branding container, right Sign In Button) and ensuring spacing/alignment remains unchanged."
+          "description": "Confirm the header branding remains text-based (SHAMMAH heading + tagline) and does not render any Butterfly Wellness wordmark `<img>`; remove any lingering imports/JSX references to `/assets/branding/butterfly-wellness-wordmark.png` if present."
+        }
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "summary": "Add a user-visible build marker on the Landing page sourced from build-provided values (not hardcoded).",
+      "acceptanceCriteria": [
+        "Landing page footer (or other always-visible area) displays a build marker in English (e.g., \"Build: <value>\").",
+        "The build marker value is derived from the build (e.g., injected env/version string or build timestamp) rather than being hardcoded, so it updates when a new deployment is made.",
+        "After deployment, the build marker is visible in production and differs from prior deployments when a rebuild occurs."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/utils/buildMarker.ts",
+          "operation": "create",
+          "description": "Create a small utility that exposes a build marker string derived from the frontend build (e.g., `import.meta.env.VITE_BUILD_MARKER` / `import.meta.env.VITE_GIT_SHA`) with a safe non-hardcoded fallback for local/dev usage."
+        },
+        {
+          "path": "frontend/src/pages/LandingPage.tsx",
+          "operation": "modify",
+          "description": "Import the build marker utility and render a user-facing build marker in an always-visible place on the Landing page (e.g., footer text in English: \"Build: <value>\")."
+        }
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "summary": "Cache-bust critical Landing static assets by varying their request URLs with the build marker.",
+      "acceptanceCriteria": [
+        "Landing page hero image request URL changes when the build marker changes (for example: `/assets/generated/wellness-hero...jpg?v=<build>`).",
+        "A user hard-refresh is not required to see updated Landing page content after a redeploy in typical browser caching scenarios."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/LandingPage.tsx",
+          "operation": "modify",
+          "description": "Append the build marker as a query parameter to the hero image `src` for cache-busting (use the existing `frontend/public/assets/generated/wellness-hero.dim_800x400.jpg` path and add `?v=<buildMarker>`), ensuring the URL changes when the build marker changes."
         }
       ]
     }

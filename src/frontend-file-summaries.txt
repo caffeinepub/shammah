@@ -1,7 +1,7 @@
 {
   "frontend/src/App.tsx": "Main application component that handles authentication flow, profile setup, onboarding flow with photo upload and quiz, and dashboard routing with loading states and welcome tutorial.",
   "frontend/src/hooks/useQueries.ts": "React Query hooks for all backend operations including profile management, quiz responses, journal entries, mindfulness activities, wellness pillar updates, reward system management, medication management (CRUD and adherence logging), and debt management (CRUD and payment tracking).",
-  "frontend/src/pages/LandingPage.tsx": "Landing page with Internet Identity login, hero section showcasing wellness features, now displaying text-based SHAMMAH branding in the header with tagline instead of image logo.",
+  "frontend/src/pages/LandingPage.tsx": "Landing page with Internet Identity login, hero section showcasing wellness features, text-based SHAMMAH branding in header, cache-busted hero image URL, and footer displaying build marker for deployment verification.",
   "frontend/src/pages/ProfileSetup.tsx": "Simplified profile setup component that collects email and username without the 4-digit duration code step.",
   "frontend/src/pages/Dashboard.tsx": "Main dashboard with persistent sidebar navigation including new Resources page under Tools menu, along with overview, rewards, 7 wellness pillars, journal, mindfulness, and logout functionality.",
   "frontend/src/pages/dashboard/OverviewPage.tsx": "Dashboard overview displaying overall progress, wellness pillars progress, recent journal entries, mindfulness activities, and subscription info (removed skin health score, total points, and badges earned).",
@@ -16,5 +16,6 @@
   "frontend/src/pages/dashboard/ResourcesPage.tsx": "New resources page displaying self-help materials organized in tabs for videos, ebooks, and guides with mock content and calming emerald-themed design.",
   "frontend/src/components/MedicationManagement.tsx": "Medication management component with add/edit/delete functionality, adherence logging with notes, daily reminders, and visual display of medication schedules and history.",
   "frontend/src/components/DebtManagement.tsx": "Debt management component with add/delete functionality, payment tracking, progress visualization with charts, debt reduction trends, and financial wellness integration.",
-  "frontend/public/assets/branding/butterfly-wellness-wordmark.png": "Butterfly Wellness wordmark logo image asset used in the landing page header."
+  "frontend/public/assets/branding/butterfly-wellness-wordmark.png": "Butterfly Wellness wordmark logo image asset used in the landing page header.",
+  "frontend/src/utils/buildMarker.ts": "Utility that exports a build marker string derived from build-time environment variables (VITE_GIT_SHA, VITE_BUILD_ID, etc.) with a timestamp-based fallback for local development."
 }

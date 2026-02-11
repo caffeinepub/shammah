@@ -1,18 +1,42 @@
 {
   "kind": "coverage_report",
   "version": "1.0",
-  "generatedAt": "2026-02-09T22:31:33.203Z",
+  "generatedAt": "2026-02-11T00:22:03.899Z",
   "sources": {
     "buildRequest": true,
     "implementationPlan": true
   },
   "requirements": {
-    "total": 1,
-    "implemented": 1,
+    "total": 3,
+    "implemented": 3,
     "items": [
       {
+        "id": "REQ-1",
+        "summary": "Verify the Landing page header branding is the text-based SHAMMAH header (no Butterfly Wellness wordmark <img> in the header) and ensure there are no remaining references in the frontend code to `/assets/branding/butterfly-wellness-wordmark.png` for the header branding.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/pages/LandingPage.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/pages/LandingPage.tsx"
+        ]
+      },
+      {
+        "id": "REQ-2",
+        "summary": "Add a visible, user-facing build marker on the Landing page (e.g., in the footer) that changes on each deployment to make it obvious when the latest frontend bundle is live.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/utils/buildMarker.ts",
+          "frontend/src/pages/LandingPage.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/utils/buildMarker.ts",
+          "frontend/src/pages/LandingPage.tsx"
+        ]
+      },
+      {
         "id": "REQ-3",
-        "summary": "Revert the landing page header branding in `frontend/src/pages/LandingPage.tsx` to what it was before the Butterfly Wellness wordmark change, since the header image is not displaying. Specifically, remove the header `<img>` that references `/assets/branding/butterfly-wellness-wordmark.png` and restore the previous SHAMMAH header branding (text-based, not dependent on the missing image), while keeping the existing header layout (left branding, right Sign In button).",
+        "summary": "Implement cache-busting for critical static assets on the Landing page so users do not see stale UI after deployment (e.g., append the build marker as a query parameter to the hero image URL).",
         "status": "implemented",
         "plannedFiles": [
           "frontend/src/pages/LandingPage.tsx"
@@ -29,6 +53,7 @@
     "frontend-file-summaries.txt",
     "frontend-implementation-plan.json",
     "frontend/src/pages/LandingPage.tsx",
+    "frontend/src/utils/buildMarker.ts",
     "project_state.json",
     "scratch/component-selection.json",
     "spec.md",

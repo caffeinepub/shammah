@@ -1,39 +1,83 @@
 {
   "kind": "build_request",
-  "title": "Revert landing page header branding to previous (remove broken Butterfly image)",
-  "priority": "normal",
+  "title": "Ensure latest frontend changes are actually deployed and add a visible build marker",
+  "priority": "high",
   "requirements": [
     {
-      "id": "REQ-3",
-      "text": "Revert the landing page header branding in `frontend/src/pages/LandingPage.tsx` to what it was before the Butterfly Wellness wordmark change, since the header image is not displaying. Specifically, remove the header `<img>` that references `/assets/branding/butterfly-wellness-wordmark.png` and restore the previous SHAMMAH header branding (text-based, not dependent on the missing image), while keeping the existing header layout (left branding, right Sign In button).",
+      "id": "REQ-1",
+      "text": "Verify the Landing page header branding is the text-based SHAMMAH header (no Butterfly Wellness wordmark <img> in the header) and ensure there are no remaining references in the frontend code to `/assets/branding/butterfly-wellness-wordmark.png` for the header branding.",
       "target": "frontend",
       "source": {
         "messageIds": [
-          "msg-6"
+          "msg-1"
         ],
         "quotes": [
-          "The image is not showing so just replace it with what was previously there"
+          "The previous changes I requested were not actually deployed"
         ]
       },
       "acceptanceCriteria": [
-        "On the Landing page, the header no longer attempts to load `/assets/branding/butterfly-wellness-wordmark.png`.",
-        "The header branding renders reliably (no broken image icon) and matches the previous SHAMMAH branding style (text-based).",
-        "The Sign In button remains visible and functional, with no layout regression in the header."
+        "`frontend/src/pages/LandingPage.tsx` header renders SHAMMAH text branding (e.g., heading + tagline) and does not render a header logo `<img>` for Butterfly Wellness.",
+        "A repo-wide search shows no usage of `/assets/branding/butterfly-wellness-wordmark.png` in the header branding code path.",
+        "After deployment, the production Landing page visibly shows the SHAMMAH text header branding."
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "text": "Add a visible, user-facing build marker on the Landing page (e.g., in the footer) that changes on each deployment to make it obvious when the latest frontend bundle is live.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "The previous changes I requested were not actually deployed"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Landing page footer (or other always-visible area) displays a build marker in English (e.g., \"Build: <value>\").",
+        "The build marker value is derived from the build (e.g., injected env/version string or build timestamp) rather than being hardcoded, so it updates when a new deployment is made.",
+        "After deployment, the build marker is visible in production and differs from prior deployments when a rebuild occurs."
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "text": "Implement cache-busting for critical static assets on the Landing page so users do not see stale UI after deployment (e.g., append the build marker as a query parameter to the hero image URL).",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "The previous changes I requested were not actually deployed"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Landing page hero image request URL changes when the build marker changes (for example: `/assets/generated/wellness-hero...jpg?v=<build>`).",
+        "A user hard-refresh is not required to see updated Landing page content after a redeploy in typical browser caching scenarios."
       ]
     }
   ],
   "constraints": [
-    "Frontend files under `frontend/src/components/ui` must not be edited; compose them only.",
-    "Do not modify any files listed as immutable in SYSTEM_CONTEXT (e.g., `frontend/src/hooks/useInternetIdentity.ts`, `frontend/src/hooks/useActor.ts`, `frontend/src/main.tsx`).",
-    "Backend is single-actor Motoko; no backend changes are required for this request."
+    "Frontend immutable paths must not be edited: `frontend/src/hooks/useInternetIdentity.ts`, `frontend/src/hooks/useInternetIdentity.tsx`, `frontend/src/hooks/useActor.ts`, `frontend/src/main.tsx`, and anything under `frontend/src/components/ui`.",
+    "Use English for any user-facing text."
   ],
   "nonGoals": [
-    "Do not implement any of the pending new feature requests in `project_state.json` (trackers, finance, body map, etc.).",
-    "Do not add new authentication providers (Google/Microsoft remain 'Coming Soon').",
-    "Do not redesign the landing page beyond reverting the header branding change."
+    "Do not add or change backend (Motoko) logic for this request.",
+    "Do not introduce a new deployment/CI system; limit changes to app code that helps confirm and surface what version is deployed.",
+    "Do not implement third-party analytics or logging services to track deployments."
   ],
   "imageRequirements": {
     "required": [],
     "edits": []
+  },
+  "userProfileUpdate": {
+    "goalsToAdd": [],
+    "goalsToRemove": [],
+    "preferencesToAdd": [],
+    "preferencesToRemove": [],
+    "miscToAdd": [],
+    "miscToRemove": [],
+    "fieldsToSet": {},
+    "fieldsToDelete": []
   }
 }

@@ -3,10 +3,14 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Heart, Shield, Sparkles, Users } from 'lucide-react';
 import { SiGoogle } from 'react-icons/si';
+import { buildMarker } from '../utils/buildMarker';
 
 export default function LandingPage() {
   const { login, loginStatus } = useInternetIdentity();
   const isLoggingIn = loginStatus === 'logging-in';
+
+  // Cache-bust the hero image with build marker
+  const heroImageUrl = `/assets/generated/wellness-hero.dim_800x400.jpg?v=${buildMarker}`;
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-white to-green-50">
@@ -99,7 +103,7 @@ export default function LandingPage() {
 
           <div className="relative">
             <img 
-              src="/assets/generated/wellness-hero.dim_800x400.jpg" 
+              src={heroImageUrl}
               alt="Wellness Journey" 
               className="rounded-2xl shadow-2xl"
             />
@@ -159,18 +163,23 @@ export default function LandingPage() {
 
       {/* Footer */}
       <footer className="border-t border-emerald-100 bg-white/80 backdrop-blur-sm py-8">
-        <div className="container mx-auto px-4 text-center text-gray-600">
-          <p className="flex items-center justify-center gap-2">
-            © {new Date().getFullYear()}. Built with <Heart className="w-4 h-4 text-emerald-600 fill-emerald-600" /> using{' '}
-            <a 
-              href={`https://caffeine.ai/?utm_source=Caffeine-footer&utm_medium=referral&utm_content=${encodeURIComponent(window.location.hostname)}`}
-              target="_blank" 
-              rel="noopener noreferrer" 
-              className="text-emerald-600 hover:text-emerald-700 font-medium"
-            >
-              caffeine.ai
-            </a>
-          </p>
+        <div className="container mx-auto px-4">
+          <div className="text-center text-gray-600 space-y-2">
+            <p className="flex items-center justify-center gap-2">
+              © {new Date().getFullYear()}. Built with <Heart className="w-4 h-4 text-emerald-600 fill-emerald-600" /> using{' '}
+              <a 
+                href={`https://caffeine.ai/?utm_source=Caffeine-footer&utm_medium=referral&utm_content=${encodeURIComponent(window.location.hostname)}`}
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="text-emerald-600 hover:text-emerald-700 font-medium"
+              >
+                caffeine.ai
+              </a>
+            </p>
+            <p className="text-xs text-gray-500">
+              Build: {buildMarker}
+            </p>
+          </div>
         </div>
       </footer>
     </div>

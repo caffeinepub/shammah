@@ -2,8 +2,49 @@
   "kind": "feature_evidence_report",
   "features": [
     {
-      "featureId": "feature-revert-the-landing-page-header-branding-in-frontend-src-pages-landingpage-tsx-to-what-it-was-before-the-butterfly-wellness-wordmark-change-since-the-header-image-is-not-displaying-specifically-remove-the-header-img-that-references-assets-branding-butterfly-wellness-wordmark-png-and-restore-the-previous-shammah-header-branding-text-based-not-dependent-on-the-missing-image-while-keeping-the-existing-header-layout-left-branding-right-sign-in-button",
-      "featureTitle": "Revert the landing page header branding in `frontend/src/pages/LandingPage.tsx` to what it was before the Butterfly Wellness wordmark change, since the header image is not displaying. Specifically, remove the header `<img>` that references `/assets/branding/butterfly-wellness-wordmark.png` and restore the previous SHAMMAH header branding (text-based, not dependent on the missing image), while keeping the existing header layout (left branding, right Sign In button).",
+      "featureId": "feature-verify-the-landing-page-header-branding-is-the-text-based-shammah-header-no-butterfly-wellness-wordmark-img-in-the-header-and-ensure-there-are-no-remaining-references-in-the-frontend-code-to-assets-branding-butterfly-wellness-wordmark-png-for-the-header-branding",
+      "featureTitle": "Verify the Landing page header branding is the text-based SHAMMAH header (no Butterfly Wellness wordmark <img> in the header) and ensure there are no remaining references in the frontend code to `/assets/branding/butterfly-wellness-wordmark.png` for the header branding.",
+      "files": [
+        "frontend/src/pages/LandingPage.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "blob-storage@4.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-1"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-add-a-visible-user-facing-build-marker-on-the-landing-page-e-g-in-the-footer-that-changes-on-each-deployment-to-make-it-obvious-when-the-latest-frontend-bundle-is-live",
+      "featureTitle": "Add a visible, user-facing build marker on the Landing page (e.g., in the footer) that changes on each deployment to make it obvious when the latest frontend bundle is live.",
+      "files": [
+        "frontend/src/pages/LandingPage.tsx",
+        "frontend/src/utils/buildMarker.ts"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "blob-storage@4.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-2"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-implement-cache-busting-for-critical-static-assets-on-the-landing-page-so-users-do-not-see-stale-ui-after-deployment-e-g-append-the-build-marker-as-a-query-parameter-to-the-hero-image-url",
+      "featureTitle": "Implement cache-busting for critical static assets on the Landing page so users do not see stale UI after deployment (e.g., append the build marker as a query parameter to the hero image URL).",
       "files": [
         "frontend/src/pages/LandingPage.tsx"
       ],

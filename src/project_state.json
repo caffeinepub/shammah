@@ -1,130 +1,40 @@
 {
   "schemaVersion": "1.0.0",
-  "projectStateVersion": 5,
-  "summary": "Wellness app (SHAMMAH) enhancements across health tracking, dashboard, finance, social/personal growth tools; landing page header branding change to Butterfly Wellness wordmark is being reverted because the new image is not displaying.",
-  "architectural_notes": [
-    "External self-awareness tools should open via external links but provide an easy way for the user to return back to the app.",
-    "Header logo/text located in frontend/src/pages/LandingPage.tsx and should be replaced with Butterfly Wellness wordmark image only (remove SHAMMAH text)."
-  ],
+  "projectStateVersion": 3,
+  "summary": "New project",
+  "architectural_notes": [],
   "known_issues": [
-    "Build system sometimes fails with 'AI couldn't implement that request' and may require breaking changes into smaller chunks.",
-    "Butterfly Wellness wordmark header image is not displaying after deployment; user requested reverting to previous header image."
+    "Reported issue: previously requested changes were not actually deployed (deployment appears out of sync with expected code/changes)."
   ],
   "isFixRequest": true,
   "existing_features": [
     {
-      "id": "feature-update-the-landing-page-header-to-fully-replace-the-shammah-branding-with-the-butterfly-wellness-main-wordmark-image-only-1-replace-the-existing-header-img-xpath-html-1-body-1-div-1-div-1-header-1-div-1-div-1-img-1-to-use-the-uploaded-butterfly-wellness-wordmark-image-and-2-remove-the-shammah-h1-element-entirely-xpath-html-1-body-1-div-1-div-1-header-1-div-1-div-1-h1-1",
-      "title": "Update the Landing page header to fully replace the SHAMMAH branding with the Butterfly Wellness main wordmark image only: (1) replace the existing header <img> (XPath /html[1]/body[1]/div[1]/div[1]/header[1]/div[1]/div[1]/img[1]) to use the uploaded Butterfly Wellness wordmark image, and (2) remove the SHAMMAH <h1> element entirely (XPath /html[1]/body[1]/div[1]/div[1]/header[1]/div[1]/div[1]/h1[1]).",
+      "id": "feature-verify-the-landing-page-header-branding-is-the-text-based-shammah-header-no-butterfly-wellness-wordmark-img-in-the-header-and-ensure-there-are-no-remaining-references-in-the-frontend-code-to-assets-branding-butterfly-wellness-wordmark-png-for-the-header-branding",
+      "title": "Verify the Landing page header branding is the text-based SHAMMAH header (no Butterfly Wellness wordmark <img> in the header) and ensure there are no remaining references in the frontend code to `/assets/branding/butterfly-wellness-wordmark.png` for the header branding.",
       "reqIds": [
         "REQ-1"
       ],
       "version": 1
     },
     {
-      "id": "feature-add-the-uploaded-butterfly-wellness-wordmark-image-to-the-frontend-as-a-static-public-asset-and-reference-it-from-the-landing-page-header-img-src-use-a-filename-and-path-that-avoids-spaces-special-characters",
-      "title": "Add the uploaded Butterfly Wellness wordmark image to the frontend as a static public asset and reference it from the Landing page header <img> src. Use a filename and path that avoids spaces/special characters.",
+      "id": "feature-add-a-visible-user-facing-build-marker-on-the-landing-page-e-g-in-the-footer-that-changes-on-each-deployment-to-make-it-obvious-when-the-latest-frontend-bundle-is-live",
+      "title": "Add a visible, user-facing build marker on the Landing page (e.g., in the footer) that changes on each deployment to make it obvious when the latest frontend bundle is live.",
       "reqIds": [
         "REQ-2"
       ],
       "version": 1
     },
     {
-      "id": "feature-revert-the-landing-page-header-branding-in-frontend-src-pages-landingpage-tsx-to-what-it-was-before-the-butterfly-wellness-wordmark-change-since-the-header-image-is-not-displaying-specifically-remove-the-header-img-that-references-assets-branding-butterfly-wellness-wordmark-png-and-restore-the-previous-shammah-header-branding-text-based-not-dependent-on-the-missing-image-while-keeping-the-existing-header-layout-left-branding-right-sign-in-button",
-      "title": "Revert the landing page header branding in `frontend/src/pages/LandingPage.tsx` to what it was before the Butterfly Wellness wordmark change, since the header image is not displaying. Specifically, remove the header `<img>` that references `/assets/branding/butterfly-wellness-wordmark.png` and restore the previous SHAMMAH header branding (text-based, not dependent on the missing image), while keeping the existing header layout (left branding, right Sign In button).",
+      "id": "feature-implement-cache-busting-for-critical-static-assets-on-the-landing-page-so-users-do-not-see-stale-ui-after-deployment-e-g-append-the-build-marker-as-a-query-parameter-to-the-hero-image-url",
+      "title": "Implement cache-busting for critical static assets on the Landing page so users do not see stale UI after deployment (e.g., append the build marker as a query parameter to the hero image URL).",
       "reqIds": [
         "REQ-3"
       ],
       "version": 1
     }
   ],
-  "new_feature_requests": [
-    {
-      "id": "AR-1",
-      "summary": "Baseline symptom entry via body map, with ability to upload photos from gallery afterward",
-      "reqIds": [],
-      "status": "pending"
-    },
-    {
-      "id": "AR-2",
-      "summary": "Personalize dashboard based on quiz outcome acknowledgement",
-      "reqIds": [],
-      "status": "pending"
-    },
-    {
-      "id": "AR-3",
-      "summary": "Daily trackers should log adherence for meals (breakfast/lunch/dinner), exercise, sleep, and skincare routine",
-      "reqIds": [],
-      "status": "pending"
-    },
-    {
-      "id": "AR-4",
-      "summary": "Make +Add Goal interactive to allow goal entry",
-      "reqIds": [],
-      "status": "pending"
-    },
-    {
-      "id": "AR-5",
-      "summary": "Health monitoring view should use Monday–Sunday week format",
-      "reqIds": [],
-      "status": "pending"
-    },
-    {
-      "id": "AR-6",
-      "summary": "Spiritual exercise button should open links when clicked",
-      "reqIds": [],
-      "status": "pending"
-    },
-    {
-      "id": "AR-7",
-      "summary": "Attach copyright-free guided meditation content",
-      "reqIds": [],
-      "status": "pending"
-    },
-    {
-      "id": "AR-8",
-      "summary": "Mood journal entries should award 1 point when selected/confirmed",
-      "reqIds": [],
-      "status": "pending"
-    },
-    {
-      "id": "AR-9",
-      "summary": "Allow users to add personal social media profiles/links in Social Connection pillars including WhatsApp",
-      "reqIds": [],
-      "status": "pending"
-    },
-    {
-      "id": "AR-10",
-      "summary": "Financial health: change currency to £ and make Budget Tracker +Add Expense interactive like +Add Debt",
-      "reqIds": [],
-      "status": "pending"
-    },
-    {
-      "id": "AR-11",
-      "summary": "Finance dashboard: selectable list of UK banks (include digital banks Monzo, Revolut, Starling) and/or Open Banking API sync option",
-      "reqIds": [],
-      "status": "pending"
-    },
-    {
-      "id": "AR-12",
-      "summary": "Add period tracker (Flo-like) in Physical Health with symptom logging (cramps, mood, flow, etc.)",
-      "reqIds": [],
-      "status": "pending"
-    },
-    {
-      "id": "AR-13",
-      "summary": "Social Connection: add entry button for special dates (birthdays, anniversaries, weddings, parties, holidays, etc.)",
-      "reqIds": [],
-      "status": "pending"
-    },
-    {
-      "id": "AR-14",
-      "summary": "Personal Growth: add self-awareness tools section with explanations + external links (MBTI, Enneagram, Big Five, StrengthsFinder, Wheel of Life, Horoscope, Numerology) and easy return back to app",
-      "reqIds": [],
-      "status": "pending"
-    }
-  ],
-  "gameProjectType": "none",
-  "projectName": "Replace landing page header branding with Butterfly Wellness wordmark",
+  "new_feature_requests": [],
+  "projectName": "Ensure latest frontend changes are actually deployed and add a visible build marker",
   "clarification_mode": "instant",
   "clarification_rounds": 0
 }

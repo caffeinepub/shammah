@@ -1,29 +1,33 @@
 {
   "kind": "spec_vs_diff_report",
   "version": "1.0",
-  "generatedAt": "2026-02-09T22:31:33.201Z",
-  "summary": "REQ-3 appears implemented: LandingPage header now uses text-based “SHAMMAH” branding with a tagline and retains the right-aligned Sign In button; no header <img> referencing /assets/branding/butterfly-wellness-wordmark.png is shown in the provided diff snippet. However, the diff also includes edits to metadata/state files not requested by the BuildRequest.",
-  "missing_requirements": [],
-  "hallucinated_features": [
+  "generatedAt": "2026-02-11T00:22:03.897Z",
+  "summary": "REQ-2 (build marker utility) and REQ-3 (cache-busting hero image URL with build marker) appear implemented in LandingPage.tsx via a new buildMarker utility and a versioned hero image URL. REQ-1 header branding looks updated to text-based “SHAMMAH” with no visible <img> in the shown header snippet, but the diff summary does not conclusively demonstrate removal of all remaining references to the Butterfly Wellness wordmark in the header branding code path; one updated summary file still claims the asset is used in the landing page header.",
+  "missing_requirements": [
     {
-      "description": "Edited frontend-file-summaries.txt (project documentation/summary) despite the request only requiring a LandingPage header branding revert.",
-      "reason": "BuildRequest only asks to change `frontend/src/pages/LandingPage.tsx` to remove the broken wordmark image and restore prior text-based SHAMMAH branding; it does not request updating summary/metadata files.",
+      "id": "REQ-1",
+      "requirement": "Ensure there are no remaining references in the frontend code to `/assets/branding/butterfly-wellness-wordmark.png` for the header branding.",
+      "reason": "The provided diff summary does not show removal of all references; additionally, an updated repo summary file explicitly states the Butterfly Wellness wordmark asset is used in the landing page header, which contradicts the requirement/AC.",
       "evidence": [
-        "frontend-file-summaries.txt"
-      ]
-    },
-    {
-      "description": "Edited project_state.json even though no project state update was requested for this branding revert.",
-      "reason": "BuildRequest does not mention changing project_state.json; it explicitly focuses on reverting the landing page header branding and avoiding unrelated feature work.",
-      "evidence": [
-        "project_state.json"
+        "frontend-file-summaries.txt (line describing `frontend/public/assets/branding/butterfly-wellness-wordmark.png` as \"used in the landing page header\")"
       ]
     }
   ],
-  "confidence": 0.72,
+  "hallucinated_features": [
+    {
+      "description": "Added/updated repository metadata files unrelated to the requested frontend landing page deployment/version marker changes (project state tracking and a frontend file summary index).",
+      "reason": "BuildRequest asked to change app code to surface deployed version and adjust landing branding/caching; it did not request adding/changing project tracking/summary metadata files.",
+      "evidence": [
+        "project_state.json",
+        "frontend-file-summaries.txt"
+      ]
+    }
+  ],
+  "confidence": 0.62,
   "changed_files": [
     "frontend-file-summaries.txt",
     "frontend/src/pages/LandingPage.tsx",
+    "frontend/src/utils/buildMarker.ts",
     "project_state.json"
   ]
 }
